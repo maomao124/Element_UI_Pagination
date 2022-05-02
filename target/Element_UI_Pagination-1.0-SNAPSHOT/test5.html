@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<!--
+Project name(项目名称)：Element_UI_Pagination
+  File name(文件名): test5
+  Authors(作者）: mao
+  Author QQ：1296193245
+  GitHub：https://github.com/maomao124/
+  Date(创建日期)： 2022/5/2
+  Time(创建时间)： 14:13
+  Description(描述)： 无
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/element-ui.css">
+    <script src="js/vue.js"></script>
+    <script src="js/element-ui.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <el-pagination
+            background
+            :page-size="20"
+            layout="total, prev, pager, next"
+            :page-count="19"
+            :total="600"
+            @current-change="change"
+    >
+    </el-pagination>
+
+    <el-pagination
+            background
+            :page-sizes="[100, 200, 300, 400]"
+            layout="sizes, prev, pager, next"
+            :page-count="19"
+            @current-change="change"
+    >
+    </el-pagination>
+
+    <el-pagination
+            background
+            :page-sizes="[100, 200, 300, 400]"
+            layout="sizes, prev, pager, next, jumper"
+            :page-count="19"
+            @current-change="change"
+            :hide-on-single-page="true"
+    >
+    </el-pagination>
+
+</div>
+
+<script>
+    var app = new Vue
+    (
+        {
+            el: "#app",
+            data: {
+                value: 1,
+            },
+            methods: {
+                change: function (value)
+                {
+                    console.log(value);
+                }
+            },
+            mounted()
+            {
+
+            }
+        }
+    )
+</script>
+</body>
+</html>
